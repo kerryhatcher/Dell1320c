@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Installation directories...
+prefix=/usr
+exec_prefix=${prefix}
+bindir=${exec_prefix}/bin
+
+# Set the library/font path...
+GS_FONTPATH="$CUPS_FONTPATH"
+export GS_FONTPATH
+
+# Options we use with Ghostscript...
+gsopts="-dQUIET -dDEBUG -dPARANOIDSAFER -dNOPAUSE -dBATCH "
+gsopts="$gsopts -dNOMEDIAATTRS -sDEVICE=ppmraw -sstdout=%stderr"
+
+# See if we have a profile=n,n,n,n,n,n,n,n,n,n,n option...
+profile=""
+for option in $5; do
+    case $option in
+        profile=*)
+	    profile="-scupsProfile=`echo $option | awk -F= '{print $2}'`"
+	    ;;
+    esac
+done
+
+# See if we have a filename on the command-line...
+if test -z "$6"; then
+	ifile="-"
+else
+	ifile="$6"
+fi
+
+# Now run Ghostscript...
+$bindir/gs $gsopts -sOUTPUTFILE="%stdout" $profile $ifile
