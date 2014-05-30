@@ -1,5 +1,9 @@
 *PPD-Adobe: "4.3"
 *%
+*%   PPD file for Dell 1320 netork color printer
+*%
+*%   Based on orginal file:
+*%
 *%   FX DocuPrint C525 A-AP PPD file for CUPS.
 *%
 *%   Copyright 2005 by Fuji Xerox Co.,Ltd.
@@ -8,21 +12,21 @@
 *FormatVersion: "4.3"
 *LanguageEncoding: ISOLatin1
 *LanguageVersion: English
-*Manufacturer: "FX"
-*PCFileName: "FX52PJX1.PPD"
-*Product: "(DocuPrint C525 A-AP)"
+*Manufacturer: "Dell"
+*PCFileName: "Dell1220c_32bit.PPD"
+*Product: "(Dell 1220c)"
 *PSVersion: "(3015.102) 1"
-*ShortNickName: "FX DocuPrint C525 A-AP - en"
-*ModelName: "FX DocuPrint C525 A-AP - en"
-*NickName: "FX DocuPrint C525 A-AP v1.0"
+*ShortNickName: "Dell 1320c"
+*ModelName: "Dell 1320c"
+*NickName: "Dell 1320c"
 *cupsVersion: 1.1
 *cupsManualCopies: False
-*cupsFilter: "application/vnd.cups-postscript 0 /usr/lib/cups/filter/FXM_PF"
+*cupsFilter: "application/vnd.cups-postscript 0 /opt/Dell1320/filter/FXM_PF"
 *cupsModelNumber: 0
-*FXMainFilter: "/usr/lib/cups/filter/FXM_MF"
-*FXFilterDir: "/usr/lib/cups/filter"
+*FXMainFilter: "/opt/Dell1320/filter/FXM_MF"
+*FXFilterDir: "/opt/Dell1320/filter"
 *FXFilterChain: "FXM_PS2PM, FXM_PM2FXR, FXM_SBP, FXM_PR, FXM_CC, FXM_ALC, FXM_HBPL"
-*FXDlutFilePath: "/usr/share/cups/FujiXerox/dlut/FX_DocuPrint_C525_A_AP.dlut"
+*FXDlutFilePath: "/opt/Dell1320/dlut/FX_DocuPrint_C525_A_AP.dlut"
 
 *% === Options and Constraints =========
 *OpenGroup: InstallableOptions/Options Installed
@@ -37,7 +41,7 @@
 
 *OpenUI *Option1/Optional Tray Module: PickOne
 *DefaultOption1: None
-*Option1 None/Not Available: ""
+*Option1 None/250 Sheet Feeder: ""
 *Option1 1Tray-S/250 Sheet Feeder: ""
 *Option1 1Tray-H/500 Sheet Feeder: ""
 *Option1 1+2Tray-SH/250+500 Sheet Feeder: ""
